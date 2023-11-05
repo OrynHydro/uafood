@@ -16,7 +16,7 @@ const Home: FC = () => {
 					height={1473}
 					alt=''
 				/>
-				<div className={s.triangle}></div>
+				<div className={s.triangle} />
 				<Image
 					className={s.bottomRight}
 					src={'/images/img/homeBottomRight.png'}

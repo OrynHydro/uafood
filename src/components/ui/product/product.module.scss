@@ -1,0 +1,20 @@
+.product {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+
+	.textBlock {
+		display: flex;
+		flex-direction: column;
+		> span {
+			text-align: center;
+			display: inline-block;
+			flex-wrap: wrap;
+			width: 160px;
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 24px;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		}
+	}
+}

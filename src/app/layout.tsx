@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import './globals.scss'
 import MainLayout from '@/components/layout/main-layout/MainLayout'
-import { Montserrat } from 'next/font/google'
+import { Sawarabi_Mincho } from 'next/font/google'
 
-const montserrat = Montserrat({
+const sawabari = Sawarabi_Mincho({
+	weight: '400',
 	subsets: ['latin'],
-	variable: '--var-montserrat',
+	variable: '--var-sawabari',
 })
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={montserrat.className}>
+			<body className={sawabari.className}>
 				<MainLayout>{children}</MainLayout>
 			</body>
 		</html>

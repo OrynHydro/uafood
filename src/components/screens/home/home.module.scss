@@ -9,25 +9,13 @@
 	justify-content: center;
 
 	.title {
-		font-size: 50px;
+		font-size: 48px;
 		font-weight: 400;
-		line-height: 30px;
+		line-height: 50px;
 		color: #fff;
-		font-family: 'Lora', 'serif';
 		text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
 			2px 2px 0 black;
 		position: relative;
-
-		&::after {
-			width: calc(100% - 20px);
-			height: 4px;
-			border: 2px solid #fff;
-			background-color: transparent;
-			position: absolute;
-			bottom: -40px;
-			left: 10px;
-			content: '';
-		}
 	}
 }
 
@@ -50,12 +38,12 @@
 
 		&::after {
 			position: absolute;
-			width: 790px;
-			left: -385px;
+			width: 650px;
+			left: -330px;
 			top: -300px;
 			text-align: center;
 
-			font-size: 30px;
+			font-size: 24px;
 			font-weight: 400;
 			line-height: 30px;
 			color: #221e1e;
