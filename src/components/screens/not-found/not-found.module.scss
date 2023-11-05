@@ -1,0 +1,23 @@
+.notFound {
+	width: 100vw;
+	height: calc(100vh - 242px);
+	text-align: center;
+	position: relative;
+	top: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+
+	> span {
+		width: 400px;
+		display: inline-block;
+
+		> strong {
+			transition: 0.2s ease;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
