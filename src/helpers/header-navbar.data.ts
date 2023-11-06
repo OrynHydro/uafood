@@ -18,6 +18,11 @@ export const HeaderNavbarData: IHeaderNavbar[] = [
 	},
 	{
 		id: 4,
+		title: 'manufacture',
+		link: '/manufacture',
+	},
+	{
+		id: 5,
 		title: 'contacts',
 		link: '/contacts',
 	},

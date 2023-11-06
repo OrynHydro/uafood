@@ -28,7 +28,7 @@
 			}
 
 			&::after {
-				content: 'Our production';
+				content: 'Contact us';
 				position: absolute;
 				top: 50%;
 				left: 50%;
@@ -47,5 +47,68 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		.leaf {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+
+		.content {
+			position: relative;
+			left: -100px;
+			width: 700px;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			.title,
+			.preTitle {
+				text-align: center;
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+			}
+
+			.form {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+
+				.button {
+					width: 100%;
+					padding: 8px 16px;
+					text-align: center;
+					border: 2px solid #f3f3f3;
+					cursor: pointer;
+					transition: 0.2s ease;
+					border-radius: 8px;
+					margin-top: 10px;
+
+					&:hover {
+						border: 2px solid transparent;
+						background-color: #f1f1f1;
+						box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+						transform: translateY(-2px);
+					}
+				}
+			}
+
+			.contactsBlock {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				background-color: #f2f2f2;
+				padding: 20px;
+				border-radius: 10px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+				width: 100%;
+				text-align: center;
+				margin: 0 auto;
+
+				.data {
+					font-size: 18px;
+				}
+			}
+		}
 	}
 }
