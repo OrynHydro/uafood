@@ -1,0 +1,29 @@
+.about {
+	width: 100vw;
+	height: calc(100vh - 120px);
+
+	.container {
+		display: flex;
+		align-items: center;
+		position: relative;
+		left: -50px;
+		top: -20px;
+
+		.textList {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			width: 400px;
+			text-align: center;
+			position: relative;
+			left: -100px;
+			top: -50px;
+		}
+
+		.imageRight {
+			position: relative;
+			right: -50px;
+			bottom: -210px;
+		}
+	}
+}

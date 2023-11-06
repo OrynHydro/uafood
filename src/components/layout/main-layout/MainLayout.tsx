@@ -10,7 +10,7 @@ const MainLayout: FC<PropsWithChildren<unknown>> = ({ children }) => {
 		<>
 			<Header />
 			{children}
-			{pathname !== '/' && pathname !== '/products' && <Footer />}
+			{pathname !== '/' && pathname !== '/contacts' && <Footer />}
 		</>
 	)
 }
