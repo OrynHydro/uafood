@@ -6,6 +6,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { TContactSchema, contactSchema } from '@/libs/schemas/contact.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Field from '@/components/ui/field/Field'
+import Link from 'next/link'
 
 const Contacts: FC = () => {
 	const {
@@ -54,7 +55,7 @@ const Contacts: FC = () => {
 							type='text'
 							control={control}
 						/>
-						<button className={s.button} type='submit'>
+						<button disabled={!isValid} className={s.button} type='submit'>
 							Submit
 						</button>
 					</form>
@@ -72,12 +73,12 @@ const Contacts: FC = () => {
 						<div className={s.data}>
 							<strong>Phone number</strong>
 							<br />
-							+380689101099
+							<Link href='tel:+380689101099'>+380689101099</Link>
 						</div>
 						<div className={s.data}>
 							<strong>Email</strong>
 							<br />
-							SALES@UAFOOD.NET
+							<Link href='mailto:SALES@UAFOOD.NET'>SALES@UAFOOD.NET</Link>
 						</div>
 					</div>
 				</div>

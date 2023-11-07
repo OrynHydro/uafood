@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import s from './footer.module.scss'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer: FC = () => {
 	return (
@@ -33,6 +34,14 @@ const Footer: FC = () => {
 							<span>contacts</span>
 							<span className={s.content}>
 								Tel. +380689101099 Email: SALES@UAFOOD.NET
+							</span>
+						</li>
+						<li className={s.item}>
+							<span className={s.github}>
+								Website made by{' '}
+								<Link href='https://github.com/OrynHydro' target='_blank'>
+									orynhydro
+								</Link>
 							</span>
 						</li>
 					</ul>
