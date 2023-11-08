@@ -9,6 +9,11 @@
 		left: -50px;
 		top: -20px;
 
+		.imageLeft {
+			position: relative;
+			top: 10px;
+		}
+
 		.textList {
 			display: flex;
 			flex-direction: column;

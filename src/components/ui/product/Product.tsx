@@ -3,23 +3,23 @@ import { FC } from 'react'
 import s from './product.module.scss'
 import Image from 'next/image'
 
-const Product: FC<IProducts> = ({ title, image, varieties, id }) => {
+const Product: FC<IProducts> = ({ desc, image }) => {
 	return (
-		<div
-			className={s.product}
-			style={{ flexDirection: id % 2 === 0 ? 'row-reverse' : 'row' }}
-		>
+		<div className={s.product}>
+			<div className={s.textBlock}>
+				{desc.map((item, index) => (
+					<span className={s.text} key={index}>
+						{item}
+					</span>
+				))}
+			</div>
 			<Image
 				className={s.image}
 				src={`/images/img/products/${image}`}
-				width={image === 'blueberry.svg' ? 320 : 180}
-				height={image === 'blueberry.svg' ? 271 : 142}
+				width={180}
+				height={180}
 				alt=''
 			/>
-			<div className={s.textBlock}>
-				<span className={s.title}>{title}</span>
-				<span className={s.varieties}>Varieties: {varieties.join(', ')}</span>
-			</div>
 		</div>
 	)
 }
