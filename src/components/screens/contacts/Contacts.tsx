@@ -7,6 +7,7 @@ import { TContactSchema, contactSchema } from '@/libs/schemas/contact.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Field from '@/components/ui/field/Field'
 import Link from 'next/link'
+// import mailgun from 'mailgun-js'
 
 const Contacts: FC = () => {
 	const {
@@ -20,7 +21,25 @@ const Contacts: FC = () => {
 	})
 
 	const onSubmit: SubmitHandler<TContactSchema> = data => {
-		console.log(data)
+		// const mg = mailgun({
+		// 	apiKey: '8c9e82ec-a12ec345',
+		// 	domain: 's1._domainkey.email.uafood.com',
+		// })
+		// const mailData = {
+		// 	from: 'oreshnikovvl@gmail.com',
+		// 	to: 'oreshnikovvl@gmail.com',
+		// 	subject: 'Тема вашего письма',
+		// 	text: 'Текст вашего письма',
+		// }
+		// mg.messages().send(mailData, (error, body) => {
+		// 	if (error) {
+		// 		console.error('Failed to send email:', error)
+		// 		// Добавьте здесь код обработки ошибки отправки
+		// 	} else {
+		// 		console.log('Email sent:', body)
+		// 		// Добавьте здесь код обработки успешной отправки
+		// 	}
+		// })
 	}
 	return (
 		<div className={s.contacts}>
