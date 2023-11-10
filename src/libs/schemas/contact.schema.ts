@@ -12,9 +12,14 @@ export const contactSchema = z.object({
 	email: z.string().email({
 		message: 'Email is not valid',
 	}),
-	message: z.string().max(200, {
-		message: 'Message is too long. Write at most 200 characters',
-	}),
+	message: z
+		.string()
+		.min(3, {
+			message: 'Message is too short. Write at least 3 characters',
+		})
+		.max(200, {
+			message: 'Message is too long. Write at most 200 characters',
+		}),
 })
 
 export type TContactSchema = z.infer<typeof contactSchema>
