@@ -59,3 +59,156 @@
 		z-index: -1;
 	}
 }
+
+@media screen and (max-width: 1600px) {
+	.bottom {
+		.triangle {
+			border-left: 800px solid transparent;
+			border-right: 800px solid transparent;
+		}
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.bottom {
+		.bottomLeft {
+			width: 1000px;
+			top: 550px;
+			height: 1000px;
+		}
+
+		.triangle {
+			border-left: 640px solid transparent;
+			border-right: 640px solid transparent;
+			border-top: 220px solid rgba(244, 244, 244, 0.95);
+
+			&::after {
+				top: -180px;
+			}
+		}
+
+		.bottomRight {
+			left: 700px;
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.bottom {
+		.bottomLeft {
+			width: 800px;
+			top: 750px;
+			height: 800px;
+		}
+
+		.triangle {
+			border-left: 512px solid transparent;
+			border-right: 512px solid transparent;
+		}
+
+		.bottomRight {
+			width: 700px;
+			left: 600px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.background {
+		.title {
+			font-size: 34px;
+		}
+	}
+
+	.bottom {
+		.bottomLeft {
+			left: -150px;
+		}
+
+		.triangle {
+			border-left: 384px solid transparent;
+			border-right: 384px solid transparent;
+
+			&::after {
+				font-size: 20px;
+				top: -200px;
+				width: 400px;
+				left: -200px;
+			}
+		}
+
+		.bottomRight {
+			left: 500px;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.background {
+		.title {
+			font-size: 30px;
+			display: inline-block;
+			width: 300px;
+			text-align: center;
+		}
+	}
+
+	.bottom {
+		.bottomLeft {
+			left: -300px;
+			top: 1050px;
+			height: 500px;
+		}
+
+		.triangle {
+			border-left: 240px solid transparent;
+			border-right: 240px solid transparent;
+
+			&::after {
+				font-size: 16px;
+				top: -200px;
+				width: 250px;
+				left: -120px;
+			}
+		}
+
+		.bottomRight {
+			left: 300px;
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.background {
+		.title {
+			font-size: 30px;
+			display: inline-block;
+			width: 300px;
+			text-align: center;
+		}
+	}
+
+	.bottom {
+		.bottomLeft {
+			left: -350px;
+			top: 1050px;
+			height: 500px;
+		}
+
+		.triangle {
+			border-left: 160px solid transparent;
+			border-right: 160px solid transparent;
+
+			&::after {
+				font-size: 12px;
+				top: -200px;
+				width: 200px;
+				left: -100px;
+			}
+		}
+
+		.bottomRight {
+			left: 200px;
+		}
+	}
+}

@@ -1,10 +1,38 @@
-import { FC } from 'react'
+'use client'
+import { FC, useEffect, useState } from 'react'
 import s from './header.module.scss'
 import Image from 'next/image'
 import { HeaderNavbarData } from '@/helpers/header-navbar.data'
 import Link from 'next/link'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Header: FC = () => {
+	const [windowWidth, setWindowWidth] = useState<number>(
+		typeof window !== 'undefined' ? window.innerWidth : 0
+	)
+
+	useEffect(() => {
+		const handleResize = () => {
+			setWindowWidth(window.innerWidth)
+		}
+
+		window.addEventListener('resize', handleResize)
+
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	}, [])
+
+	const [activeMenu, setActiveMenu] = useState<boolean>(false)
+
+	useEffect(() => {
+		if (activeMenu) {
+			document.body.style.overflowY = 'hidden'
+		} else {
+			document.body.style.overflowY = 'scroll'
+		}
+	}, [activeMenu])
+
 	return (
 		<div className={s.header}>
 			<div className={s.wrapper}>
@@ -25,13 +53,44 @@ const Header: FC = () => {
 							alt=''
 						/>
 					</Link>
-					<nav className={s.right}>
-						{HeaderNavbarData.map(item => (
-							<Link key={item.id} href={item.link} className={s.link}>
-								{item.title}
-							</Link>
-						))}
-					</nav>
+					{windowWidth < 768 ? (
+						<>
+							<div className={s.burger} onClick={() => setActiveMenu(true)}>
+								<GiHamburgerMenu />
+							</div>
+							<div
+								className={activeMenu ? `${s.overlay} ${s.active}` : s.overlay}
+								onClick={() => setActiveMenu(false)}
+							></div>
+							<div
+								className={
+									activeMenu ? `${s.rightMenu} ${s.active}` : s.rightMenu
+								}
+							>
+								<nav className={s.right}>
+									{HeaderNavbarData.map(item => (
+										<Link key={item.id} href={item.link} className={s.link}>
+											{item.title}
+										</Link>
+									))}
+								</nav>
+								<button
+									className={s.close}
+									onClick={() => setActiveMenu(false)}
+								>
+									Close
+								</button>
+							</div>
+						</>
+					) : (
+						<nav className={s.right}>
+							{HeaderNavbarData.map(item => (
+								<Link key={item.id} href={item.link} className={s.link}>
+									{item.title}
+								</Link>
+							))}
+						</nav>
+					)}
 				</div>
 			</div>
 		</div>

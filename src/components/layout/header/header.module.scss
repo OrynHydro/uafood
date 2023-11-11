@@ -27,13 +27,139 @@
 					font-weight: 500;
 					line-height: 35px;
 					color: #000;
-					transition: 0.2s ease;
+					transition: color 0.2s ease;
 
 					&:hover {
 						color: #949292;
 					}
 				}
 			}
+
+			.burger {
+				width: 40px;
+				height: 40px;
+				background-color: #ececec;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 8px;
+				cursor: pointer;
+				transition: 0.2s ease;
+
+				&:hover {
+					background-color: #d4d0d0;
+				}
+
+				> img {
+					font-size: 20px;
+				}
+			}
+
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				opacity: 0;
+				z-index: -1;
+				background-color: rgba(0, 0, 0, 0.5);
+				transition: 0.2s ease;
+
+				&.active {
+					opacity: 1;
+					z-index: 1;
+				}
+			}
+
+			.rightMenu {
+				position: fixed;
+				width: 0;
+				overflow: hidden;
+				right: 0;
+				top: 0px;
+				height: 100vh;
+				transition: width 0.2s ease;
+				background-color: #fff;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				.right {
+					width: 0;
+					overflow: hidden;
+				}
+
+				&.active {
+					width: 200px;
+					z-index: 1;
+					position: absolute;
+
+					.close {
+						margin: 16px;
+						width: calc(100% - 36px);
+						padding: 16px;
+						border: 2px solid #f3f3f3;
+						cursor: pointer;
+						transition: 0.2s ease;
+						border-radius: 8px;
+						background-color: #f3f3f3;
+						position: relative;
+
+						&:hover {
+							border: 2px solid transparent;
+							background-color: #f1f1f1;
+							box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+							transform: translateY(-2px);
+						}
+					}
+
+					.right {
+						width: 100%;
+						flex-direction: column;
+
+						.link {
+							width: 100%;
+							padding: 16px;
+							transition: background 0.2s ease;
+
+							&:hover {
+								background-color: #f5f5f5;
+								color: #000;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.header {
+		.wrapper {
+			padding: 0px 50px;
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.header {
+		.wrapper {
+			padding: 0px 20px;
+			.container {
+				.right {
+					gap: 12px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.header {
+		.wrapper {
+			padding: 0px;
 		}
 	}
 }
