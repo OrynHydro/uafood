@@ -56,3 +56,88 @@
 		}
 	}
 }
+
+@media screen and (max-width: 1600px) {
+	.footer {
+		&::before {
+			border-left: 800px solid transparent;
+			border-right: 800px solid transparent;
+		}
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.footer {
+		&::before {
+			border-left: 640px solid transparent;
+			border-right: 640px solid transparent;
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.footer {
+		&::before {
+			border-left: 512px solid transparent;
+			border-right: 512px solid transparent;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.footer {
+		&::before {
+			border-left: 384px solid transparent;
+			border-right: 384px solid transparent;
+		}
+		.wrapper {
+			padding: 4px 0;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.footer {
+		&::before {
+			border-left: 240px solid transparent;
+			border-right: 240px solid transparent;
+		}
+		.wrapper {
+			padding: 20px;
+			.container {
+				flex-direction: column;
+				gap: 20px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.footer {
+		&::before {
+			border-left: 160px solid transparent;
+			border-right: 160px solid transparent;
+		}
+		.wrapper {
+			padding: 30px;
+			.container {
+				.logo {
+					flex-direction: column;
+				}
+				.contacts {
+					gap: 50px;
+					.item {
+						flex-direction: column;
+						align-items: center;
+						.content {
+							text-align: center;
+						}
+						.github {
+							margin-left: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -12,6 +12,7 @@
 		.imageLeft {
 			position: relative;
 			top: 10px;
+			z-index: -1;
 		}
 
 		.textList {
@@ -24,12 +25,131 @@
 			left: -100px;
 			top: -50px;
 			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+			.text {
+				width: 100%;
+			}
 		}
 
 		.imageRight {
 			position: relative;
 			right: -50px;
 			bottom: -210px;
+			z-index: -1;
+		}
+	}
+
+	@media screen and (max-width: 1600px) {
+		height: calc(100vh - 273px);
+		position: relative;
+		top: -100px;
+		.container {
+			.imageLeft {
+				width: 600px;
+				height: 900px;
+			}
+			.textList {
+				width: 100%;
+				left: 100px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1280px) {
+		.container {
+			.imageLeft {
+				width: 700px;
+				height: 900px;
+				top: -50px;
+				left: -100px;
+			}
+			.textList {
+				top: -60px;
+				left: -100px;
+			}
+			.imageRight {
+				width: 250px;
+				height: 300px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		height: calc(100vh - 150px);
+		.container {
+			top: -100px;
+			.imageLeft {
+				width: 500px;
+				height: 700px;
+				top: 200px;
+			}
+			.textList {
+				top: 200px;
+			}
+			.imageRight {
+				width: 200px;
+				height: 250px;
+				bottom: -502px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		height: 100vh;
+		.container {
+			top: -100px;
+			.imageLeft {
+				width: 400px;
+				height: 400px;
+				// top: 200px;
+				left: -50px;
+			}
+			.textList {
+				top: 200px;
+				left: -20px;
+				gap: 25px;
+			}
+			.imageRight {
+				width: 150px;
+				height: 150px;
+				bottom: -662px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		height: fit-content;
+		.container {
+			top: -50px;
+			flex-direction: column;
+			.imageLeft {
+				display: none;
+			}
+			.textList {
+				top: 200px;
+				width: 300px;
+				left: 50px;
+				gap: 25px;
+			}
+			.imageRight {
+				width: 480px;
+				height: 380px;
+				bottom: -200px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 320px) {
+		.container {
+			top: -50px;
+			.textList {
+				width: 250px;
+				left: 50px;
+			}
+			.imageRight {
+				width: 320px;
+				height: 320px;
+				bottom: -200px;
+			}
 		}
 	}
 }
