@@ -16,4 +16,59 @@
 			line-height: 24px;
 		}
 	}
+	@media screen and (max-width: 1280px) {
+		gap: 0px;
+		.textBlock {
+			.text {
+				width: 200px;
+				font-size: 16px;
+			}
+		}
+
+		.image {
+			width: 140px;
+			height: 140px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		&:nth-child(2n) {
+			flex-direction: row-reverse;
+		}
+		justify-content: space-evenly;
+		width: 100%;
+		.textBlock {
+			.text {
+				width: 200px;
+				font-size: 16px;
+			}
+		}
+
+		.image {
+			width: 220px;
+			height: 220px;
+			position: relative;
+			z-index: -1;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.image {
+			width: 180px;
+			height: 180px;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.image {
+			width: 150px;
+			height: 150px;
+		}
+
+		.textBlock {
+			.text {
+				width: 150px;
+			}
+		}
+	}
 }

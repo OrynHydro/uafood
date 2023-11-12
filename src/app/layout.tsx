@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.scss'
 import MainLayout from '@/components/layout/main-layout/MainLayout'
 import { Sawarabi_Mincho } from 'next/font/google'
-import { LanguageProvider, useLanguage } from '@/context/LanguageContext'
 
 const sawabari = Sawarabi_Mincho({
 	weight: '400',
@@ -13,6 +12,7 @@ const sawabari = Sawarabi_Mincho({
 export const metadata: Metadata = {
 	title: 'UAFOOD',
 	description: 'UAFOOD website',
+	icons: 'favicon.ico',
 }
 
 export default function RootLayout({
@@ -20,13 +20,11 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	// const { language } = useLanguage()
 	return (
 		<html lang='en'>
 			<body className={sawabari.className}>
-				{/* <LanguageProvider> */}
+				<link rel='shortcut icon' href='/favicon.ico' sizes='any' />
 				<MainLayout>{children}</MainLayout>
-				{/* </LanguageProvider> */}
 			</body>
 		</html>
 	)

@@ -83,7 +83,7 @@
 						cursor: pointer;
 						transition: 0.2s ease;
 						position: relative;
-						z-index: 1;
+						z-index: 2;
 
 						&:hover {
 							background-color: #d4d0d0;
@@ -99,7 +99,7 @@
 						top: 0;
 						left: 0;
 						width: 100vw;
-						height: 100vh;
+						height: calc(100vh + 100px);
 						opacity: 0;
 						z-index: -1;
 						background-color: rgba(0, 0, 0, 0.5);
@@ -107,7 +107,7 @@
 
 						&.active {
 							opacity: 1;
-							z-index: 1;
+							z-index: 2;
 						}
 					}
 
@@ -131,7 +131,7 @@
 
 						&.active {
 							width: 200px;
-							z-index: 1;
+							z-index: 2;
 							position: absolute;
 
 							.close {

@@ -14,10 +14,10 @@
 		background-image: url('./../../../../public/images/img/manufactureBanner.svg');
 		filter: grayscale(70%);
 
-		z-index: 2;
+		z-index: 1;
 
 		.text {
-			z-index: 10;
+			z-index: 2;
 			position: relative;
 		}
 
