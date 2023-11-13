@@ -7,7 +7,7 @@ import { uk } from './../../../locales/uk'
 import useLanguage from '@/hooks/useLanguage'
 
 const About: FC = () => {
-	const systemLanguage = useLanguage()
+	const systemLanguage = localStorage.getItem('language')
 	return (
 		<div className={s.about}>
 			<div className={s.container}>
@@ -20,19 +20,13 @@ const About: FC = () => {
 				/>
 				<ul className={s.textList}>
 					<li className={s.text}>
-						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-							? uk.about.text1
-							: en.about.text1}
+						{systemLanguage === 'ua' ? uk.about.text1 : en.about.text1}
 					</li>
 					<li className={s.text}>
-						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-							? uk.about.text2
-							: en.about.text2}
+						{systemLanguage === 'ua' ? uk.about.text2 : en.about.text2}
 					</li>
 					<li className={s.text}>
-						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-							? uk.about.text3
-							: en.about.text3}
+						{systemLanguage === 'ua' ? uk.about.text3 : en.about.text3}
 					</li>
 				</ul>
 			</div>

@@ -4,17 +4,14 @@ import s from './home.module.scss'
 import Image from 'next/image'
 import { en } from './../../../locales/en'
 import { uk } from './../../../locales/uk'
-import useLanguage from '@/hooks/useLanguage'
 
 const Home: FC = () => {
-	const systemLanguage = useLanguage()
+	const systemLanguage = localStorage.getItem('language')
 	return (
 		<>
 			<div className={s.background}>
 				<h1 className={s.title}>
-					{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-						? uk.home.banner
-						: en.home.banner}
+					{systemLanguage === 'ua' ? uk.home.banner : en.home.banner}
 				</h1>
 			</div>
 			<div className={s.bottom}>
@@ -26,11 +23,7 @@ const Home: FC = () => {
 					alt=''
 				/>
 				<div className={s.triangle}>
-					<span>
-						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-							? uk.home.desc
-							: en.home.desc}
-					</span>
+					<span>{systemLanguage === 'ua' ? uk.home.desc : en.home.desc}</span>
 				</div>
 				<Image
 					className={s.bottomRight}

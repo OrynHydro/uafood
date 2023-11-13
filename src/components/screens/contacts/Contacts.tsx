@@ -14,7 +14,7 @@ import { uk } from './../../../locales/uk'
 import useLanguage from '@/hooks/useLanguage'
 
 const Contacts: FC = () => {
-	const systemLanguage = useLanguage()
+	const systemLanguage = localStorage.getItem('language')
 	const {
 		register: formRegister,
 		formState: { errors, isValid },
@@ -59,9 +59,7 @@ const Contacts: FC = () => {
 			<div className={s.left}>
 				<div className={s.textBlock}>
 					<span>
-						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-							? uk.contacts.title
-							: en.contacts.title}
+						{systemLanguage === 'ua' ? uk.contacts.title : en.contacts.title}
 					</span>
 				</div>
 			</div>
@@ -69,7 +67,7 @@ const Contacts: FC = () => {
 			<div className={s.right}>
 				<div className={s.content}>
 					<h1 className={s.title}>
-						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+						{systemLanguage === 'ua'
 							? uk.contacts.formTitle
 							: en.contacts.formTitle}
 					</h1>
@@ -77,7 +75,7 @@ const Contacts: FC = () => {
 						<Field
 							{...formRegister('name')}
 							label={
-								systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+								systemLanguage === 'ua'
 									? uk.contacts.input1
 									: en.contacts.input1
 							}
@@ -88,7 +86,7 @@ const Contacts: FC = () => {
 						<Field
 							{...formRegister('email')}
 							label={
-								systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+								systemLanguage === 'ua'
 									? uk.contacts.input2
 									: en.contacts.input2
 							}
@@ -99,7 +97,7 @@ const Contacts: FC = () => {
 						<Field
 							{...formRegister('message')}
 							label={
-								systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+								systemLanguage === 'ua'
 									? uk.contacts.input3
 									: en.contacts.input3
 							}
@@ -114,25 +112,21 @@ const Contacts: FC = () => {
 							type='submit'
 						>
 							<span>
-								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+								{systemLanguage === 'ua'
 									? uk.contacts.button
 									: en.contacts.button}
 							</span>
 						</button>
 					</form>
 					<h2 className={s.preTitle}>
-						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+						{systemLanguage === 'ua'
 							? uk.contacts.preTitle
 							: en.contacts.preTitle}
 					</h2>
 					<div className={s.contactsBlock}>
 						<div className={s.data}>
-							<strong>
-								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-									? 'Адреса'
-									: 'Address'}
-							</strong>
-							{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA' ? (
+							<strong>{systemLanguage === 'ua' ? 'Адреса' : 'Address'}</strong>
+							{systemLanguage === 'ua' ? (
 								<>
 									<br />
 									Будинок 37, вулиця Шевченка, місто Дніпро, Дніпропетровська
@@ -155,18 +149,14 @@ const Contacts: FC = () => {
 						</div>
 						<div className={s.data}>
 							<strong>
-								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-									? 'Телефон'
-									: 'Phone number'}
+								{systemLanguage === 'ua' ? 'Телефон' : 'Phone number'}
 							</strong>
 							<br />
 							<Link href='tel:+380689101099'>+380689101099</Link>
 						</div>
 						<div className={s.data}>
 							<strong>
-								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-									? 'Електронна пошта'
-									: 'Email'}
+								{systemLanguage === 'ua' ? 'Електронна пошта' : 'Email'}
 							</strong>
 							<br />
 							<Link href='mailto:SALES@UAFOOD.NET'>SALES@UAFOOD.NET</Link>

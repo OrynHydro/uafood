@@ -6,7 +6,7 @@ import Link from 'next/link'
 import useLanguage from '@/hooks/useLanguage'
 
 const Footer: FC = () => {
-	const systemLanguage = useLanguage()
+	const systemLanguage = localStorage.getItem('language')
 	return (
 		<div className={s.footer}>
 			<Image
@@ -34,32 +34,24 @@ const Footer: FC = () => {
 					</div>
 					<ul className={s.contacts}>
 						<li className={s.item}>
-							<span>
-								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-									? 'адреса'
-									: 'address'}
-							</span>
+							<span>{systemLanguage === 'ua' ? 'адреса' : 'address'}</span>
 							<span className={s.content}>
-								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+								{systemLanguage === 'ua'
 									? 'вул. Шевченка, буд. 37, м. Дніпро, Дніпропетровська область, Україна, 49044'
 									: 'Building 37, Shevchenko Street, Dnipro City, Dnipropetrovsk Region, Ukraine, 49044'}
 							</span>
 						</li>
 						<li className={s.item}>
-							<span>
-								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
-									? 'контакти'
-									: 'contacts'}
-							</span>
+							<span>{systemLanguage === 'ua' ? 'контакти' : 'contacts'}</span>
 							<span className={s.content}>
-								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+								{systemLanguage === 'ua'
 									? 'Тел. +380689101099 Ел.пошта: SALES@UAFOOD.NET'
 									: 'Tel. +380689101099 email: SALES@UAFOOD.NET'}
 							</span>
 						</li>
 						<li className={s.item}>
 							<span className={s.github}>
-								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+								{systemLanguage === 'ua'
 									? 'Сайт розроблений'
 									: 'Website made by'}{' '}
 								<Link href='https://github.com/OrynHydro' target='_blank'>
