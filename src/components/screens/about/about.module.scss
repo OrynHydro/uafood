@@ -29,13 +29,6 @@
 				width: 100%;
 			}
 		}
-
-		.imageRight {
-			position: relative;
-			right: -50px;
-			bottom: -210px;
-			z-index: -1;
-		}
 	}
 
 	@media screen and (max-width: 1600px) {
@@ -43,13 +36,9 @@
 		position: relative;
 		top: -100px;
 		.container {
-			.imageLeft {
-				width: 600px;
-				height: 900px;
-			}
 			.textList {
-				width: 100%;
-				left: 100px;
+				position: relative;
+				left: -200px;
 			}
 		}
 	}
@@ -64,11 +53,7 @@
 			}
 			.textList {
 				top: -60px;
-				left: -100px;
-			}
-			.imageRight {
-				width: 250px;
-				height: 300px;
+				left: -200px;
 			}
 		}
 	}
@@ -85,33 +70,19 @@
 			.textList {
 				top: 200px;
 			}
-			.imageRight {
-				width: 200px;
-				height: 250px;
-				bottom: -502px;
-			}
 		}
 	}
 
 	@media screen and (max-width: 768px) {
-		height: 100vh;
+		height: calc(100vh + 200px);
 		.container {
-			top: -100px;
 			.imageLeft {
-				width: 400px;
-				height: 400px;
-				// top: 200px;
 				left: -50px;
 			}
 			.textList {
 				top: 200px;
 				left: -20px;
 				gap: 25px;
-			}
-			.imageRight {
-				width: 150px;
-				height: 150px;
-				bottom: -662px;
 			}
 		}
 	}
@@ -129,11 +100,7 @@
 				width: 300px;
 				left: 50px;
 				gap: 25px;
-			}
-			.imageRight {
-				width: 480px;
-				height: 380px;
-				bottom: -200px;
+				margin-bottom: 500px;
 			}
 		}
 	}
@@ -144,11 +111,6 @@
 			.textList {
 				width: 250px;
 				left: 50px;
-			}
-			.imageRight {
-				width: 320px;
-				height: 320px;
-				bottom: -200px;
 			}
 		}
 	}

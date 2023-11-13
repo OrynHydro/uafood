@@ -1,8 +1,10 @@
 import { FC } from 'react'
 import s from './home.module.scss'
 import Image from 'next/image'
+import { metadata } from '@/app/layout'
 
 const Home: FC = () => {
+	// metadata.title = 'Uafood | Home'
 	return (
 		<>
 			<div className={s.background}>

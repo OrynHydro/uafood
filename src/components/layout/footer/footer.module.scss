@@ -15,6 +15,13 @@
 		content: '';
 	}
 
+	.image {
+		position: absolute;
+		top: -410px;
+		z-index: -2;
+		right: 0;
+	}
+
 	.wrapper {
 		padding: 8px 50px;
 
@@ -77,6 +84,11 @@
 
 @media screen and (max-width: 1024px) {
 	.footer {
+		.image {
+			width: 550px;
+			height: 400px;
+			top: -400px;
+		}
 		&::before {
 			border-left: 512px solid transparent;
 			border-right: 512px solid transparent;
@@ -98,6 +110,11 @@
 
 @media screen and (max-width: 480px) {
 	.footer {
+		.image {
+			width: 480px;
+			height: 380px;
+			top: -380px;
+		}
 		&::before {
 			border-left: 240px solid transparent;
 			border-right: 240px solid transparent;
@@ -114,6 +131,11 @@
 
 @media screen and (max-width: 320px) {
 	.footer {
+		.image {
+			width: 320px;
+			height: 320px;
+			top: -320px;
+		}
 		&::before {
 			border-left: 160px solid transparent;
 			border-right: 160px solid transparent;

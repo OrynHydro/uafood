@@ -2,8 +2,10 @@ import { FC } from 'react'
 import s from './manufacture.module.scss'
 import { ManufactureData } from '@/helpers/manufacture.data'
 import Image from 'next/image'
+import { metadata } from '@/app/layout'
 
 const Manufacture: FC = () => {
+	// metadata.title = 'Uafood | Manufacture'
 	return (
 		<div className={s.manufacture}>
 			<div className={s.banner}>
@@ -41,13 +43,6 @@ const Manufacture: FC = () => {
 						alt=''
 					/>
 				</div>
-				<Image
-					className={s.imageRight}
-					src={'/images/img/aboutRight.png'}
-					width={600}
-					height={420}
-					alt=''
-				/>
 			</main>
 		</div>
 	)

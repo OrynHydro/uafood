@@ -24,22 +24,10 @@
 			margin-bottom: 100px;
 		}
 
-		.images {
-			position: relative;
-			right: 0;
-			top: -100px;
-
-			.leaves {
-				position: relative;
-				z-index: -1;
-			}
-
-			.rightBottom {
-				position: absolute;
-				left: 50px;
-				bottom: -100px;
-				z-index: -1;
-			}
+		.leaves {
+			position: absolute;
+			right: -10px;
+			z-index: -1;
 		}
 	}
 
@@ -52,10 +40,8 @@
 				margin-left: 0px;
 				gap: 40px 80px;
 			}
-			.images {
-				.leaves {
-					width: 600px;
-				}
+			.leaves {
+				width: 600px;
 			}
 		}
 	}
@@ -65,10 +51,8 @@
 			.products {
 				gap: 40px 40px;
 			}
-			.images {
-				.leaves {
-					width: 400px;
-				}
+			.leaves {
+				width: 400px;
 			}
 		}
 	}
@@ -77,18 +61,7 @@
 		> main {
 			.products {
 				gap: 40px 0px;
-				left: 100px;
-			}
-			.images {
-				position: absolute;
-				right: 0;
-				bottom: -1000px;
-
-				.leaves {
-					position: relative;
-					top: 200px;
-					height: 1500px;
-				}
+				left: 0;
 			}
 		}
 	}
@@ -102,31 +75,9 @@
 				left: 0px;
 				margin-bottom: 400px;
 			}
-			.images {
-				top: 4000px;
-				bottom: 0;
-				left: 120px;
 
-				.leaves {
-					display: none;
-				}
-
-				.rightBottom {
-					bottom: 0px;
-				}
-			}
-		}
-	}
-
-	@media screen and (max-width: 480px) {
-		> main {
-			.images {
-				top: 3565px;
-				left: -50px;
-				.rightBottom {
-					width: 480px;
-					height: 380px;
-				}
+			.leaves {
+				display: none;
 			}
 		}
 	}
@@ -135,14 +86,6 @@
 		> main {
 			.products {
 				gap: 50px;
-			}
-			.images {
-				top: 3940px;
-				left: -50px;
-				.rightBottom {
-					width: 320px;
-					height: 320px;
-				}
 			}
 		}
 	}

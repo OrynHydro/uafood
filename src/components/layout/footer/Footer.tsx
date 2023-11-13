@@ -6,6 +6,13 @@ import Link from 'next/link'
 const Footer: FC = () => {
 	return (
 		<div className={s.footer}>
+			<Image
+				className={s.image}
+				src={'/images/img/aboutRight.png'}
+				width={600}
+				height={420}
+				alt=''
+			/>
 			<div className={s.wrapper}>
 				<div className={s.container}>
 					<div className={s.logo}>

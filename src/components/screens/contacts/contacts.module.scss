@@ -9,7 +9,7 @@
 	.left {
 		width: 40%;
 		height: calc(100vh + 25px);
-		background-image: url('./../../../../public/images/img/productsLeft.svg');
+		background-image: url('/images/img/productsLeft.svg');
 
 		.textBlock {
 			position: relative;
@@ -154,6 +154,107 @@
 							color: #666;
 						}
 					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 1600px) {
+		.left {
+			position: relative;
+			left: -100px;
+		}
+		.right {
+			.leaf {
+				z-index: -1;
+			}
+			.content {
+				left: -200px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1280px) {
+		.left {
+			position: relative;
+			left: -150px;
+			width: 650px;
+			height: calc(100vh + 70px);
+			justify-content: center;
+			z-index: 10;
+
+			.textBlock {
+				width: 350px;
+				position: relative;
+				left: 200px;
+
+				&::after {
+					font-size: 24px;
+				}
+			}
+		}
+		.right {
+			.leaf {
+				display: none;
+			}
+			.content {
+				left: -100px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		.left {
+			position: relative;
+			width: 700px;
+			height: calc(100vh + 70px);
+			z-index: 1;
+
+			.textBlock {
+				width: 350px;
+				position: relative;
+				left: 200px;
+
+				&::after {
+					font-size: 24px;
+				}
+			}
+		}
+		.right {
+			position: absolute;
+			right: 0;
+			z-index: 1;
+			.content {
+				left: 0px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.left {
+			display: none;
+		}
+		.right {
+			width: 100%;
+			position: relative;
+
+			.content {
+				width: calc(100% - 50px);
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+
+	@media screen and (max-width: 320px) {
+		.right {
+			.content {
+				width: 250px;
+				.title,
+				.preTitle {
+					font-size: 24px;
+				}
+				.contactsBlock {
+					margin-bottom: 20px;
 				}
 			}
 		}

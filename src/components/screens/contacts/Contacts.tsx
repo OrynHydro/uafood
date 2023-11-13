@@ -9,8 +9,10 @@ import Field from '@/components/ui/field/Field'
 import Link from 'next/link'
 import emailjs from '@emailjs/browser'
 import Alert from '@/components/ui/alert/Alert'
+import { metadata } from '@/app/layout'
 
 const Contacts: FC = () => {
+	// metadata.title = 'Uafood | Contacts'
 	const {
 		register: formRegister,
 		formState: { errors, isValid },
@@ -28,7 +30,7 @@ const Contacts: FC = () => {
 	const onSubmit: SubmitHandler<TContactSchema> = data => {
 		const templateParams = {
 			...data,
-			company_email: 'oreshnikovvl@gmail.com',
+			company_email: 'SALES@UAFOOD.NET',
 		}
 
 		setLoading(true)

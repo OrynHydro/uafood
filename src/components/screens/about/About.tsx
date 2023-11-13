@@ -1,8 +1,10 @@
 import { FC } from 'react'
 import s from './about.module.scss'
 import Image from 'next/image'
+import { metadata } from '@/app/layout'
 
 const About: FC = () => {
+	// metadata.title = 'Uafood | About'
 	return (
 		<div className={s.about}>
 			<div className={s.container}>
@@ -34,13 +36,6 @@ const About: FC = () => {
 						customer achievement.
 					</li>
 				</ul>
-				<Image
-					className={s.imageRight}
-					src={'/images/img/aboutRight.png'}
-					width={600}
-					height={420}
-					alt=''
-				/>
 			</div>
 		</div>
 	)
