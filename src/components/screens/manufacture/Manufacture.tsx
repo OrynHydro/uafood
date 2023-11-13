@@ -1,24 +1,36 @@
+'use client'
 import { FC } from 'react'
 import s from './manufacture.module.scss'
-import { ManufactureData } from '@/helpers/manufacture.data'
+import { ManufactureData, ManufactureDataEn } from '@/helpers/manufacture.data'
 import Image from 'next/image'
-import { metadata } from '@/app/layout'
+import useLanguage from '@/hooks/useLanguage'
 
 const Manufacture: FC = () => {
-	// metadata.title = 'Uafood | Manufacture'
+	const systemLanguage = useLanguage()
 	return (
 		<div className={s.manufacture}>
 			<div className={s.banner}>
-				<span className={s.text}>Our manufacture</span>
+				<span className={s.text}>
+					{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+						? 'Наше виробництво'
+						: 'Our manufacture'}
+				</span>
 			</div>
 			<main>
 				<ul className={s.textBlock}>
-					{ManufactureData.map(item => (
-						<li key={item.id}>
-							<h2>{item.title}</h2>
-							<span>{item.text}</span>
-						</li>
-					))}
+					{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+						? ManufactureData.map(item => (
+								<li key={item.id}>
+									<h2>{item.title}</h2>
+									<span>{item.text}</span>
+								</li>
+						  ))
+						: ManufactureDataEn.map(item => (
+								<li key={item.id}>
+									<h2>{item.title}</h2>
+									<span>{item.text}</span>
+								</li>
+						  ))}
 				</ul>
 				<div className={s.images}>
 					<Image

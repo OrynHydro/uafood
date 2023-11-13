@@ -2,11 +2,16 @@
 import { FC, useEffect, useState } from 'react'
 import s from './header.module.scss'
 import Image from 'next/image'
-import { HeaderNavbarData } from '@/helpers/header-navbar.data'
+import {
+	HeaderNavbarData,
+	HeaderNavbarDataEn,
+} from '@/helpers/header-navbar.data'
 import Link from 'next/link'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import useLanguage from '@/hooks/useLanguage'
 
 const Header: FC = () => {
+	const systemLanguage = useLanguage()
 	const [activeMenu, setActiveMenu] = useState<boolean>(false)
 
 	useEffect(() => {
@@ -38,11 +43,17 @@ const Header: FC = () => {
 						/>
 					</Link>
 					<nav className={s.right}>
-						{HeaderNavbarData.map(item => (
-							<Link key={item.id} href={item.link} className={s.link}>
-								{item.title}
-							</Link>
-						))}
+						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+							? HeaderNavbarData.map(item => (
+									<Link key={item.id} href={item.link} className={s.link}>
+										{item.title}
+									</Link>
+							  ))
+							: HeaderNavbarDataEn.map(item => (
+									<Link key={item.id} href={item.link} className={s.link}>
+										{item.title}
+									</Link>
+							  ))}
 					</nav>
 
 					<div className={s.menu}>
@@ -59,14 +70,22 @@ const Header: FC = () => {
 							}
 						>
 							<nav className={s.nav}>
-								{HeaderNavbarData.map(item => (
-									<Link key={item.id} href={item.link} className={s.link}>
-										{item.title}
-									</Link>
-								))}
+								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+									? HeaderNavbarData.map(item => (
+											<Link key={item.id} href={item.link} className={s.link}>
+												{item.title}
+											</Link>
+									  ))
+									: HeaderNavbarDataEn.map(item => (
+											<Link key={item.id} href={item.link} className={s.link}>
+												{item.title}
+											</Link>
+									  ))}
 							</nav>
 							<button className={s.close} onClick={() => setActiveMenu(false)}>
-								Close
+								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+									? 'Закрити'
+									: 'Close'}
 							</button>
 						</div>
 					</div>

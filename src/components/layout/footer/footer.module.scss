@@ -38,14 +38,18 @@
 			.contacts {
 				display: flex;
 				flex-direction: column;
-				gap: 15px;
+				gap: 55px;
 
 				.item {
 					display: flex;
-					gap: 10px;
+					position: relative;
+					width: 350px;
 
 					.content {
 						width: 268px;
+						position: absolute;
+						right: -10px;
+						top: 0;
 					}
 
 					.github {

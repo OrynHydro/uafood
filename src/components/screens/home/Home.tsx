@@ -1,14 +1,21 @@
+'use client'
 import { FC } from 'react'
 import s from './home.module.scss'
 import Image from 'next/image'
-import { metadata } from '@/app/layout'
+import { en } from './../../../locales/en'
+import { uk } from './../../../locales/uk'
+import useLanguage from '@/hooks/useLanguage'
 
 const Home: FC = () => {
-	// metadata.title = 'Uafood | Home'
+	const systemLanguage = useLanguage()
 	return (
 		<>
 			<div className={s.background}>
-				<h1 className={s.title}>Nature's bountry, frozen in time</h1>
+				<h1 className={s.title}>
+					{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+						? uk.home.banner
+						: en.home.banner}
+				</h1>
 			</div>
 			<div className={s.bottom}>
 				<Image
@@ -18,7 +25,13 @@ const Home: FC = () => {
 					height={1473}
 					alt=''
 				/>
-				<div className={s.triangle} />
+				<div className={s.triangle}>
+					<span>
+						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+							? uk.home.desc
+							: en.home.desc}
+					</span>
+				</div>
 				<Image
 					className={s.bottomRight}
 					src={'/images/img/homeBottomRight.png'}

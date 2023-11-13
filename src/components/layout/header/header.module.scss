@@ -107,7 +107,7 @@
 
 						&.active {
 							opacity: 1;
-							z-index: 2;
+							z-index: 10;
 						}
 					}
 
@@ -131,7 +131,7 @@
 
 						&.active {
 							width: 200px;
-							z-index: 2;
+							z-index: 11;
 							position: absolute;
 
 							.close {

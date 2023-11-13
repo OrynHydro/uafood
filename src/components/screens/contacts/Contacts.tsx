@@ -9,10 +9,12 @@ import Field from '@/components/ui/field/Field'
 import Link from 'next/link'
 import emailjs from '@emailjs/browser'
 import Alert from '@/components/ui/alert/Alert'
-import { metadata } from '@/app/layout'
+import { en } from './../../../locales/en'
+import { uk } from './../../../locales/uk'
+import useLanguage from '@/hooks/useLanguage'
 
 const Contacts: FC = () => {
-	// metadata.title = 'Uafood | Contacts'
+	const systemLanguage = useLanguage()
 	const {
 		register: formRegister,
 		formState: { errors, isValid },
@@ -55,32 +57,52 @@ const Contacts: FC = () => {
 	return (
 		<div className={s.contacts}>
 			<div className={s.left}>
-				<div className={s.textBlock}>Contact us</div>
+				<div className={s.textBlock}>
+					<span>
+						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+							? uk.contacts.title
+							: en.contacts.title}
+					</span>
+				</div>
 			</div>
 
 			<div className={s.right}>
 				<div className={s.content}>
 					<h1 className={s.title}>
-						You can fill this form and we will contact you as soon as possible
+						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+							? uk.contacts.formTitle
+							: en.contacts.formTitle}
 					</h1>
 					<form className={s.form} onSubmit={handleSubmit(onSubmit)}>
 						<Field
 							{...formRegister('name')}
-							label='Name'
+							label={
+								systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+									? uk.contacts.input1
+									: en.contacts.input1
+							}
 							error={errors.name?.message}
 							type='text'
 							required
 						/>
 						<Field
 							{...formRegister('email')}
-							label='Email'
+							label={
+								systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+									? uk.contacts.input2
+									: en.contacts.input2
+							}
 							error={errors.email?.message}
 							type='email'
 							required
 						/>
 						<Field
 							{...formRegister('message')}
-							label='Message'
+							label={
+								systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+									? uk.contacts.input3
+									: en.contacts.input3
+							}
 							error={errors.message?.message}
 							type='text'
 							control={control}
@@ -91,27 +113,61 @@ const Contacts: FC = () => {
 							className={loading ? `${s.button} ${s.loading}` : s.button}
 							type='submit'
 						>
-							<span>Submit</span>
+							<span>
+								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+									? uk.contacts.button
+									: en.contacts.button}
+							</span>
 						</button>
 					</form>
-					<h2 className={s.preTitle}>or you can contact us by yourself</h2>
+					<h2 className={s.preTitle}>
+						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+							? uk.contacts.preTitle
+							: en.contacts.preTitle}
+					</h2>
 					<div className={s.contactsBlock}>
 						<div className={s.data}>
-							<strong>Address</strong>
-							<br />
-							Building 37, Shevchenko Street,
-							<br />
-							Dnipro City, Dnipropetrovsk Region,
-							<br />
-							Ukraine, 49044
+							<strong>
+								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+									? 'Адреса'
+									: 'Address'}
+							</strong>
+							{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA' ? (
+								<>
+									<br />
+									Будинок 37, вулиця Шевченка, місто Дніпро, Дніпропетровська
+									область, Україна, 49044
+									<br />
+									місто Дніпро, Дніпропетровська область,
+									<br />
+									Україна, 49044
+								</>
+							) : (
+								<>
+									<br />
+									Building 37, Shevchenko Street,
+									<br />
+									Dnipro City, Dnipropetrovsk Region,
+									<br />
+									Ukraine, 49044
+								</>
+							)}
 						</div>
 						<div className={s.data}>
-							<strong>Phone number</strong>
+							<strong>
+								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+									? 'Телефон'
+									: 'Phone number'}
+							</strong>
 							<br />
 							<Link href='tel:+380689101099'>+380689101099</Link>
 						</div>
 						<div className={s.data}>
-							<strong>Email</strong>
+							<strong>
+								{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+									? 'Електронна пошта'
+									: 'Email'}
+							</strong>
 							<br />
 							<Link href='mailto:SALES@UAFOOD.NET'>SALES@UAFOOD.NET</Link>
 						</div>

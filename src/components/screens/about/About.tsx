@@ -1,10 +1,13 @@
+'use client'
 import { FC } from 'react'
 import s from './about.module.scss'
 import Image from 'next/image'
-import { metadata } from '@/app/layout'
+import { en } from './../../../locales/en'
+import { uk } from './../../../locales/uk'
+import useLanguage from '@/hooks/useLanguage'
 
 const About: FC = () => {
-	// metadata.title = 'Uafood | About'
+	const systemLanguage = useLanguage()
 	return (
 		<div className={s.about}>
 			<div className={s.container}>
@@ -17,23 +20,19 @@ const About: FC = () => {
 				/>
 				<ul className={s.textList}>
 					<li className={s.text}>
-						The company LLC "UAFOOD UKRAINE" employs people who know a lot how
-						produce best quality frozen berries, because they have long
-						experience in the field of processing and logistics of frozen foods.
+						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+							? uk.about.text1
+							: en.about.text1}
 					</li>
 					<li className={s.text}>
-						A specially equipped and accredited laboratory carries out
-						microbiological and physico-chemical control and analysis of raw
-						materials and finished products at each stage of the production
-						process. We do our best to maintain the high quality of our
-						products.
+						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+							? uk.about.text2
+							: en.about.text2}
 					</li>
 					<li className={s.text}>
-						Our clients are the largest manufacturing companies, leaders in the
-						European, North America and Middle East markets. Understanding that
-						our product gets on the table to the end consumer the quality always
-						remains under a magnifying glass. The measure of our success is our
-						customer achievement.
+						{systemLanguage === 'ru-RU' || systemLanguage === 'uk-UA'
+							? uk.about.text3
+							: en.about.text3}
 					</li>
 				</ul>
 			</div>
