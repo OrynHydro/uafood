@@ -84,9 +84,15 @@ const Header: FC = () => {
 											</Link>
 									  ))}
 							</nav>
-							<button className={s.close} onClick={() => setActiveMenu(false)}>
-								{systemLanguage === 'ua' ? 'Закрити' : 'Close'}
-							</button>
+							<div className={s.bottom}>
+								<LanguageMenu reversed />
+								<button
+									className={s.close}
+									onClick={() => setActiveMenu(false)}
+								>
+									{systemLanguage === 'ua' ? 'Закрити' : 'Close'}
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>

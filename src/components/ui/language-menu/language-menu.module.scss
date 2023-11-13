@@ -7,6 +7,14 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+
+	&.reversed {
+		gap: 10px;
+		.chevron {
+			position: absolute;
+			right: 0;
+		}
+	}
 }
 
 .chevron {
@@ -23,6 +31,22 @@
 	background-color: #fff;
 	border: 1px solid #ccc;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdownReversed {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	width: 100%;
+	.item {
+		position: relative;
+		left: -8px;
+		gap: 10px;
+	}
 }
 
 .item {
