@@ -1,24 +1,34 @@
+'use client'
 import { FC } from 'react'
 import s from './products.module.scss'
-import { ProductsData } from '@/helpers/products.data'
+import { ProductsData, ProductsDataEn } from '@/helpers/products.data'
 import Product from '@/components/ui/product/Product'
 import Image from 'next/image'
-import { metadata } from '@/app/layout'
 
 const Products: FC = () => {
-	// metadata.title = 'Uafood | Products'
+	const language = localStorage.getItem('language')
 	return (
 		<div className={s.page}>
-			<h1 className={s.title}>Our products</h1>
+			<h1 className={s.title}>
+				{language === 'ua' ? 'Наша продукція' : 'Our production'}
+			</h1>
 			<main>
 				<div className={s.products}>
-					{ProductsData.map(product => (
-						<Product
-							id={product.id}
-							desc={product.desc}
-							image={product.image}
-						/>
-					))}
+					{language === 'ua'
+						? ProductsData.map(product => (
+								<Product
+									id={product.id}
+									desc={product.desc}
+									image={product.image}
+								/>
+						  ))
+						: ProductsDataEn.map(product => (
+								<Product
+									id={product.id}
+									desc={product.desc}
+									image={product.image}
+								/>
+						  ))}
 				</div>
 				<Image
 					className={s.leaves}

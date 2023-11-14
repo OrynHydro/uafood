@@ -1,27 +1,21 @@
 'use client'
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import s from './manufacture.module.scss'
 import { ManufactureData, ManufactureDataEn } from '@/helpers/manufacture.data'
 import Image from 'next/image'
-import useLanguage from '@/hooks/useLanguage'
 
 const Manufacture: FC = () => {
-	const [currentLang, setCurrentLang] = useState<string>('uk')
-	const systemLanguage = localStorage.getItem('language')
-
-	useEffect(() => {
-		setCurrentLang(systemLanguage === 'ua' ? 'ua' : 'en')
-	}, [systemLanguage])
+	const language = localStorage.getItem('language')
 	return (
 		<div className={s.manufacture}>
 			<div className={s.banner}>
 				<span className={s.text}>
-					{currentLang === 'ua' ? 'Наше виробництво' : 'Our manufacture'}
+					{language === 'ua' ? 'Наше виробництво' : 'Our manufacture'}
 				</span>
 			</div>
 			<main>
 				<ul className={s.textBlock}>
-					{currentLang === 'ua'
+					{language === 'ua'
 						? ManufactureData.map(item => (
 								<li key={item.id}>
 									<h2>{item.title}</h2>

@@ -1,15 +1,14 @@
-// LanguageMenu.tsx
 import { FC, useState, useEffect } from 'react'
 import s from './language-menu.module.scss'
 import Image from 'next/image'
 
 const LanguageMenu: FC<{ reversed?: boolean }> = ({ reversed }) => {
 	const [currentLang, setCurrentLang] = useState<string>('uk')
-	const systemLanguage = localStorage.getItem('language')
+	const language = localStorage.getItem('language')
 
 	useEffect(() => {
-		setCurrentLang(systemLanguage === 'ua' ? 'ua' : 'en')
-	}, [systemLanguage])
+		setCurrentLang(language === 'ua' ? 'ua' : 'en')
+	}, [language])
 
 	const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false)
 
@@ -20,7 +19,6 @@ const LanguageMenu: FC<{ reversed?: boolean }> = ({ reversed }) => {
 		setIsDropdownOpen(false)
 	}
 
-	// Determine the dropdown direction based on the 'reversed' prop
 	const dropdownDirectionClass = reversed ? s.dropdownReversed : s.dropdown
 
 	return (
@@ -38,7 +36,7 @@ const LanguageMenu: FC<{ reversed?: boolean }> = ({ reversed }) => {
 					alt=''
 				/>
 				{reversed && (
-					<span>{currentLang === 'ua' ? 'Ukrainian' : 'English'}</span>
+					<span>{currentLang === 'ua' ? 'Українська' : 'English'}</span>
 				)}
 
 				<span className={s.chevron}>{isDropdownOpen ? '▲' : '▼'}</span>
@@ -59,7 +57,7 @@ const LanguageMenu: FC<{ reversed?: boolean }> = ({ reversed }) => {
 							alt=''
 						/>
 						{reversed && (
-							<span>{currentLang === 'ua' ? 'English' : 'Ukrainian'}</span>
+							<span>{currentLang === 'ua' ? 'Англійська' : 'Ukrainian'}</span>
 						)}
 					</div>
 				</div>

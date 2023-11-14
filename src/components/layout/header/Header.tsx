@@ -8,11 +8,10 @@ import {
 } from '@/helpers/header-navbar.data'
 import Link from 'next/link'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import useLanguage from '@/hooks/useLanguage'
 import LanguageMenu from '@/components/ui/language-menu/LanguageMenu'
 
 const Header: FC = () => {
-	const systemLanguage = localStorage.getItem('language')
+	const language = localStorage.getItem('language')
 	const [activeMenu, setActiveMenu] = useState<boolean>(false)
 
 	useEffect(() => {
@@ -45,7 +44,7 @@ const Header: FC = () => {
 					</Link>
 					<nav className={s.right}>
 						<LanguageMenu />
-						{systemLanguage === 'ua'
+						{language === 'ua'
 							? HeaderNavbarData.map(item => (
 									<Link key={item.id} href={item.link} className={s.link}>
 										{item.title}
@@ -72,7 +71,7 @@ const Header: FC = () => {
 							}
 						>
 							<nav className={s.nav}>
-								{systemLanguage === 'ua'
+								{language === 'ua'
 									? HeaderNavbarData.map(item => (
 											<Link key={item.id} href={item.link} className={s.link}>
 												{item.title}
@@ -90,7 +89,7 @@ const Header: FC = () => {
 									className={s.close}
 									onClick={() => setActiveMenu(false)}
 								>
-									{systemLanguage === 'ua' ? 'Закрити' : 'Close'}
+									{language === 'ua' ? 'Закрити' : 'Close'}
 								</button>
 							</div>
 						</div>

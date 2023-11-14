@@ -11,10 +11,9 @@ import emailjs from '@emailjs/browser'
 import Alert from '@/components/ui/alert/Alert'
 import { en } from './../../../locales/en'
 import { uk } from './../../../locales/uk'
-import useLanguage from '@/hooks/useLanguage'
 
 const Contacts: FC = () => {
-	const systemLanguage = localStorage.getItem('language')
+	const language = localStorage.getItem('language')
 	const {
 		register: formRegister,
 		formState: { errors, isValid },
@@ -59,7 +58,7 @@ const Contacts: FC = () => {
 			<div className={s.left}>
 				<div className={s.textBlock}>
 					<span>
-						{systemLanguage === 'ua' ? uk.contacts.title : en.contacts.title}
+						{language === 'ua' ? uk.contacts.title : en.contacts.title}
 					</span>
 				</div>
 			</div>
@@ -67,17 +66,13 @@ const Contacts: FC = () => {
 			<div className={s.right}>
 				<div className={s.content}>
 					<h1 className={s.title}>
-						{systemLanguage === 'ua'
-							? uk.contacts.formTitle
-							: en.contacts.formTitle}
+						{language === 'ua' ? uk.contacts.formTitle : en.contacts.formTitle}
 					</h1>
 					<form className={s.form} onSubmit={handleSubmit(onSubmit)}>
 						<Field
 							{...formRegister('name')}
 							label={
-								systemLanguage === 'ua'
-									? uk.contacts.input1
-									: en.contacts.input1
+								language === 'ua' ? uk.contacts.input1 : en.contacts.input1
 							}
 							error={errors.name?.message}
 							type='text'
@@ -86,9 +81,7 @@ const Contacts: FC = () => {
 						<Field
 							{...formRegister('email')}
 							label={
-								systemLanguage === 'ua'
-									? uk.contacts.input2
-									: en.contacts.input2
+								language === 'ua' ? uk.contacts.input2 : en.contacts.input2
 							}
 							error={errors.email?.message}
 							type='email'
@@ -97,9 +90,7 @@ const Contacts: FC = () => {
 						<Field
 							{...formRegister('message')}
 							label={
-								systemLanguage === 'ua'
-									? uk.contacts.input3
-									: en.contacts.input3
+								language === 'ua' ? uk.contacts.input3 : en.contacts.input3
 							}
 							error={errors.message?.message}
 							type='text'
@@ -112,21 +103,17 @@ const Contacts: FC = () => {
 							type='submit'
 						>
 							<span>
-								{systemLanguage === 'ua'
-									? uk.contacts.button
-									: en.contacts.button}
+								{language === 'ua' ? uk.contacts.button : en.contacts.button}
 							</span>
 						</button>
 					</form>
 					<h2 className={s.preTitle}>
-						{systemLanguage === 'ua'
-							? uk.contacts.preTitle
-							: en.contacts.preTitle}
+						{language === 'ua' ? uk.contacts.preTitle : en.contacts.preTitle}
 					</h2>
 					<div className={s.contactsBlock}>
 						<div className={s.data}>
-							<strong>{systemLanguage === 'ua' ? 'Адреса' : 'Address'}</strong>
-							{systemLanguage === 'ua' ? (
+							<strong>{language === 'ua' ? 'Адреса' : 'Address'}</strong>
+							{language === 'ua' ? (
 								<>
 									<br />
 									Будинок 37, вулиця Шевченка, місто Дніпро, Дніпропетровська
@@ -148,15 +135,13 @@ const Contacts: FC = () => {
 							)}
 						</div>
 						<div className={s.data}>
-							<strong>
-								{systemLanguage === 'ua' ? 'Телефон' : 'Phone number'}
-							</strong>
+							<strong>{language === 'ua' ? 'Телефон' : 'Phone number'}</strong>
 							<br />
 							<Link href='tel:+380689101099'>+380689101099</Link>
 						</div>
 						<div className={s.data}>
 							<strong>
-								{systemLanguage === 'ua' ? 'Електронна пошта' : 'Email'}
+								{language === 'ua' ? 'Електронна пошта' : 'Email'}
 							</strong>
 							<br />
 							<Link href='mailto:SALES@UAFOOD.NET'>SALES@UAFOOD.NET</Link>

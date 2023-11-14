@@ -6,12 +6,12 @@ import { en } from './../../../locales/en'
 import { uk } from './../../../locales/uk'
 
 const Home: FC = () => {
-	const systemLanguage = localStorage.getItem('language')
+	const language = localStorage.getItem('language')
 	return (
 		<>
 			<div className={s.background}>
 				<h1 className={s.title}>
-					{systemLanguage === 'ua' ? uk.home.banner : en.home.banner}
+					{language === 'ua' ? uk.home.banner : en.home.banner}
 				</h1>
 			</div>
 			<div className={s.bottom}>
@@ -23,7 +23,7 @@ const Home: FC = () => {
 					alt=''
 				/>
 				<div className={s.triangle}>
-					<span>{systemLanguage === 'ua' ? uk.home.desc : en.home.desc}</span>
+					<span>{language === 'ua' ? uk.home.desc : en.home.desc}</span>
 				</div>
 				<Image
 					className={s.bottomRight}
