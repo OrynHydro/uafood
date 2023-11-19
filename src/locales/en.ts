@@ -1,7 +1,7 @@
 export const en = {
 	home: {
 		banner: "Nature's bountry, frozen in time",
-		desc: "The quality always remains under a magnifying glass. The measure of our success is our customer achievement.'",
+		desc: 'The quality always remains under a magnifying glass. The measure of our success is our customer achievement.',
 	},
 	about: {
 		text1:
