@@ -13,7 +13,11 @@ import { en } from './../../../locales/en'
 import { uk } from './../../../locales/uk'
 
 const Contacts: FC = () => {
-	const language = localStorage.getItem('language')
+	let language = 'en'
+
+	if (typeof window !== 'undefined' && window.localStorage !== undefined) {
+		language = localStorage.getItem('language') || language
+	}
 	const {
 		register: formRegister,
 		formState: { errors, isValid },
@@ -116,8 +120,7 @@ const Contacts: FC = () => {
 							{language === 'ua' ? (
 								<>
 									<br />
-									Будинок 37, вулиця Шевченка, місто Дніпро, Дніпропетровська
-									область, Україна, 49044
+									Будинок 37, вулиця Шевченка
 									<br />
 									місто Дніпро, Дніпропетровська область,
 									<br />

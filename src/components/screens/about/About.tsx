@@ -6,7 +6,11 @@ import { en } from './../../../locales/en'
 import { uk } from './../../../locales/uk'
 
 const About: FC = () => {
-	const language = localStorage.getItem('language')
+	let language = 'en'
+
+	if (typeof window !== 'undefined' && window.localStorage !== undefined) {
+		language = localStorage.getItem('language') || language
+	}
 	return (
 		<div className={s.about}>
 			<div className={s.container}>

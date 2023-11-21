@@ -5,7 +5,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Footer: FC = () => {
-	const language = localStorage.getItem('language')
+	let language = 'en'
+
+	if (typeof window !== 'undefined' && window.localStorage !== undefined) {
+		language = localStorage.getItem('language') || language
+	}
 	return (
 		<div className={s.footer}>
 			<Image

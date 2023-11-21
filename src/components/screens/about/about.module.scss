@@ -43,6 +43,30 @@
 		}
 	}
 
+	@media screen and (max-width: 1500px) {
+		.container {
+			.textList {
+				position: relative;
+				left: -350px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1400px) {
+		.container {
+			.imageLeft {
+				width: 700px;
+				height: 900px;
+				top: -50px;
+				left: -100px;
+			}
+			.textList {
+				position: relative;
+				left: -200px;
+			}
+		}
+	}
+
 	@media screen and (max-width: 1280px) {
 		.container {
 			.imageLeft {

@@ -5,7 +5,11 @@ import { ManufactureData, ManufactureDataEn } from '@/helpers/manufacture.data'
 import Image from 'next/image'
 
 const Manufacture: FC = () => {
-	const language = localStorage.getItem('language')
+	let language = 'en'
+
+	if (typeof window !== 'undefined' && window.localStorage !== undefined) {
+		language = localStorage.getItem('language') || language
+	}
 	return (
 		<div className={s.manufacture}>
 			<div className={s.banner}>

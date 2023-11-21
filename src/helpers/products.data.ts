@@ -7,7 +7,7 @@ export const ProductsData: IProducts[] = [
 		desc: [
 			'Малина 90/10',
 			'Цілі ягоди 90%, дріблені 10%',
-			'Сорти: Полька, Полана, Джоан Ж',
+			'Сорти: Полька, Полана, Джоан Дж.',
 			'Упаковка: картонна коробка',
 			'Вага: 10 кг',
 			'Походження: Україна',
@@ -18,7 +18,7 @@ export const ProductsData: IProducts[] = [
 		image: 'blueberry.png',
 		desc: [
 			'Чорниця',
-			'Сорти: Дикий чорниця',
+			'Сорт: Дика чорниця',
 			'Упаковка: картонна коробка та паперовий пакет',
 			'Вага: 10 кг; 20 кг; 25 кг',
 			'Походження: Україна',
@@ -30,7 +30,7 @@ export const ProductsData: IProducts[] = [
 		desc: [
 			'Малина 70/30',
 			'Цілі ягоди 70%, дріблені 30%',
-			'Сорти: Полька, Полана, Джоан Ж',
+			'Сорти: Полька, Полана, Джоан Дж.',
 			'Упаковка: картонна коробка',
 			'Вага: 10 кг',
 			'Походження: Україна',
@@ -53,7 +53,7 @@ export const ProductsData: IProducts[] = [
 		desc: [
 			'Малина Мікс',
 			'Цілі ягоди 50%, дріблені 50%',
-			'Сорти: Полька, Полана, Джоан Ж',
+			'Сорти: Полька, Полана, Джоан Дж.',
 			'Упаковка: картонна коробка',
 			'Вага: 10 кг',
 			'Походження: Україна',
@@ -64,7 +64,7 @@ export const ProductsData: IProducts[] = [
 		image: 'blackberry.svg',
 		desc: [
 			'Ожина',
-			'Різновиди: Ожина лісова',
+			'Сорт: Дика ожина',
 			'Упаковка: картонна коробка та паперовий пакет',
 			'Вага: 10 кг; 20 кг; 25 кг',
 			'Походження: Україна',
@@ -74,9 +74,9 @@ export const ProductsData: IProducts[] = [
 		id: 7,
 		image: 'rasberry.svg',
 		desc: [
-			'Крихка',
+			'Малина Грис',
 			'100% зламана',
-			'Сорти: Полька, Полана, Джоан Дж',
+			'Сорти: Полька, Полана, Джоан Дж.',
 			'Упаковка: картонна коробка',
 			'Вага: 10 кг',
 			'Походження: Україна',
@@ -87,7 +87,7 @@ export const ProductsData: IProducts[] = [
 		image: 'strawberry.svg',
 		desc: [
 			'Полуниця некалібрована з кистями',
-			'Сорти: Медове око, Клері',
+			'Сорти: Honeoye, Klery',
 			'Упаковка: картонна коробка та паперовий пакет',
 			'Вага: 10 кг; 20 кг; 25 кг',
 			'Походження: Україна',
@@ -99,7 +99,7 @@ export const ProductsData: IProducts[] = [
 		desc: [
 			'Клубніка калібрована',
 			'Розміри: 15/25 мм',
-			'Сорти: Honeoeye, Klery',
+			'Сорти: Honeoye, Klery',
 			'Упаковка: картонна коробка та паперовий пакет',
 			'Вага: 10 кг; 20 кг; 25 кг',
 			'Походження: Україна',
@@ -110,7 +110,7 @@ export const ProductsData: IProducts[] = [
 		image: 'strawberry.svg',
 		desc: [
 			'Клубніка некалібрована',
-			'Сорти: Honeoeye, Klery',
+			'Сорти: Honeoye, Klery',
 			'Упаковка: картонна коробка та паперовий пакет',
 			'Вага: 10 кг; 20 кг; 25 кг',
 			'Походження: Україна',
@@ -121,7 +121,7 @@ export const ProductsData: IProducts[] = [
 		image: 'cranberry.svg',
 		desc: [
 			'Журавлина',
-			'Сорти: Дика журавлина',
+			'Сорт: Дика журавлина',
 			'Упаковка: картонна коробка та паперовий пакет',
 			'Вага: 10 кг; 20 кг; 25 кг',
 			'Походження: Україна',
@@ -131,8 +131,8 @@ export const ProductsData: IProducts[] = [
 		id: 12,
 		image: 'cowberry.svg',
 		desc: [
-			'Чорниця',
-			'Сорти: Дика чорниця',
+			'Брусниця',
+			'Сорт: Дика брусниця',
 			'Упаковка: картонна коробка та паперовий пакет',
 			'Вага: 10 кг; 20 кг; 25 кг',
 			'Походження: Україна',
@@ -142,8 +142,8 @@ export const ProductsData: IProducts[] = [
 		id: 13,
 		image: 'roseHip.svg',
 		desc: [
-			'Шипшинник',
-			'Сорти: Дикий шипшинник',
+			'Шипшина',
+			'Сорт: Дика шипшина',
 			'Упаковка: картонна коробка та паперовий пакет',
 			'Вага: 10 кг; 20 кг; 25 кг',
 			'Походження: Україна',
@@ -169,7 +169,7 @@ export const ProductsDataEn: IProducts[] = [
 		image: 'blueberry.png',
 		desc: [
 			'Blueberry',
-			'Varieties: Wild blueberry',
+			'Variety: Wild blueberry',
 			'Packing: carton box and paper bag',
 			'Weight: 10 kg; 20 kg; 25 kg',
 			'Origin: Ukraine',
@@ -215,7 +215,7 @@ export const ProductsDataEn: IProducts[] = [
 		image: 'blackberry.svg',
 		desc: [
 			'Blackberry',
-			'Varieties: Wild blackberry',
+			'Variety: Wild blackberry',
 			'Packing: carton box and paper bag',
 			'Weight: 10 kg; 20 kg; 25 kg',
 			'Origin: Ukraine',
@@ -238,7 +238,7 @@ export const ProductsDataEn: IProducts[] = [
 		image: 'strawberry.svg',
 		desc: [
 			'Strawberry uncalibrated with strokes',
-			'Varieties: Honeoeye, Klery',
+			'Varieties: Honeoye, Klery',
 			'Packing: carton box and paper bag',
 			'Weight: 10 kg; 20 kg; 25 kg',
 			'Origin: Ukraine',
@@ -250,7 +250,7 @@ export const ProductsDataEn: IProducts[] = [
 		desc: [
 			'Strawberry calibrated',
 			'Dimensions: 15/25 mm',
-			'Varieties: Honeoeye, Klery',
+			'Varieties: Honeoye, Klery',
 			'Packing: carton box and paper bag',
 			'Weight: 10 kg; 20 kg; 25 kg',
 			'Origin: Ukraine',
@@ -261,7 +261,7 @@ export const ProductsDataEn: IProducts[] = [
 		image: 'strawberry.svg',
 		desc: [
 			'Strawberry uncalibrated',
-			'Varieties: Honeoeye, Klery',
+			'Varieties: Honeoye, Klery',
 			'Packing: carton box and paper bag',
 			'Weight: 10 kg; 20 kg; 25 kg',
 			'Origin: Ukraine',
@@ -272,7 +272,7 @@ export const ProductsDataEn: IProducts[] = [
 		image: 'cranberry.svg',
 		desc: [
 			'Cranberry',
-			'Varieties: Wild cranberry',
+			'Variety: Wild cranberry',
 			'Packing: carton box and paper bag',
 			'Weight: 10 kg; 20 kg; 25 kg',
 			'Origin: Ukraine',
@@ -283,7 +283,7 @@ export const ProductsDataEn: IProducts[] = [
 		image: 'cowberry.svg',
 		desc: [
 			'Cowberry',
-			'Varieties: Wild Cowberry',
+			'Variety: Wild Cowberry',
 			'Packing: carton box and paper bag',
 			'Weight: 10 kg; 20 kg; 25 kg',
 			'Origin: Ukraine',
@@ -294,7 +294,7 @@ export const ProductsDataEn: IProducts[] = [
 		image: 'roseHip.svg',
 		desc: [
 			'Rose Hip',
-			'Varieties: Wild Rose Hip',
+			'Variety: Wild Rose Hip',
 			'Packing: carton box and paper bag',
 			'Weight: 10 kg; 20 kg; 25 kg',
 			'Origin: Ukraine',

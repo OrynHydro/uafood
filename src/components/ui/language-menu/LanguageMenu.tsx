@@ -4,7 +4,11 @@ import Image from 'next/image'
 
 const LanguageMenu: FC<{ reversed?: boolean }> = ({ reversed }) => {
 	const [currentLang, setCurrentLang] = useState<string>('uk')
-	const language = localStorage.getItem('language')
+	let language = 'en'
+
+	if (typeof window !== 'undefined' && window.localStorage !== undefined) {
+		language = localStorage.getItem('language') || language
+	}
 
 	useEffect(() => {
 		setCurrentLang(language === 'ua' ? 'ua' : 'en')

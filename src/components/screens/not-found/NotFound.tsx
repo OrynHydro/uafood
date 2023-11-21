@@ -3,7 +3,11 @@ import s from './not-found.module.scss'
 import Link from 'next/link'
 
 const NotFoundPage: FC = () => {
-	const language = localStorage.getItem('language')
+	let language = 'en'
+
+	if (typeof window !== 'undefined' && window.localStorage !== undefined) {
+		language = localStorage.getItem('language') || language
+	}
 	return (
 		<div className={s.notFound}>
 			<h1>

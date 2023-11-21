@@ -100,6 +100,43 @@
 		}
 	}
 
+	@media screen and (max-width: 1500px) {
+		> main {
+			.textBlock {
+				> li {
+					width: 450px;
+				}
+			}
+			.images {
+				left: 120px;
+				.image3 {
+					left: -100px;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1400px) {
+		> main {
+			.images {
+				left: 50px;
+				.image1 {
+					width: 220px;
+					height: 200px;
+				}
+				.image2 {
+					width: 200px;
+					left: -100px;
+					height: 240px;
+				}
+				.image3 {
+					left: -50px;
+					width: 240px;
+				}
+			}
+		}
+	}
+
 	@media screen and (max-width: 1280px) {
 		height: calc(100vh + 50px);
 		> main {
@@ -114,7 +151,16 @@
 			.images {
 				left: 150px;
 				top: 100px;
+				.image1 {
+					width: 264px;
+					height: 237px;
+				}
+				.image2 {
+					width: 211px;
+					height: 281px;
+				}
 				.image3 {
+					width: 266px;
 					top: -100px;
 					left: 0;
 				}

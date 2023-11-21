@@ -11,7 +11,11 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import LanguageMenu from '@/components/ui/language-menu/LanguageMenu'
 
 const Header: FC = () => {
-	const language = localStorage.getItem('language')
+	let language = 'en'
+
+	if (typeof window !== 'undefined' && window.localStorage !== undefined) {
+		language = localStorage.getItem('language') || language
+	}
 	const [activeMenu, setActiveMenu] = useState<boolean>(false)
 
 	useEffect(() => {
@@ -29,7 +33,7 @@ const Header: FC = () => {
 					<Link href={'/'} className={s.left}>
 						<Image
 							className={s.logoImg}
-							src='/images/logo/logoimg.svg'
+							src='/images/logo/logoImg.svg'
 							width={70}
 							height={73}
 							alt=''

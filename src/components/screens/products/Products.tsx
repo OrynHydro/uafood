@@ -6,7 +6,11 @@ import Product from '@/components/ui/product/Product'
 import Image from 'next/image'
 
 const Products: FC = () => {
-	const language = localStorage.getItem('language')
+	let language = 'en'
+
+	if (typeof window !== 'undefined' && window.localStorage !== undefined) {
+		language = localStorage.getItem('language') || language
+	}
 	return (
 		<div className={s.page}>
 			<h1 className={s.title}>

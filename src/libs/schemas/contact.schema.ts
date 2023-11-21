@@ -12,7 +12,9 @@ type ErrorMessages = {
 	}
 }
 
-const language = localStorage.getItem('language') || 'en'
+const storedLanguage =
+	typeof window !== 'undefined' ? window.localStorage.getItem('language') : 'en'
+const language = storedLanguage !== null ? storedLanguage : 'en'
 
 const errorMessages: Record<string, ErrorMessages> = {
 	en: {
